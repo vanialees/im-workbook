@@ -1,21 +1,38 @@
-//this sketch draws a circle pattern and paints a brush of trailing squares following the cursor//
+let p;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight/2)
-    frameRate(5);
+  createCanvas(windowWidth, windowHeight);
+  stroke(255);
+  background(0);
+  noCursor(); // Hide the default cursor
+  p = createP("'S' to save, 'SPACE' to clear");
+  p.position(20, 20);
+  p.style('color', 'white');
+}
+
+function draw() {
+  // Draw the main line
+  line(mouseX, mouseY, pmouseX, pmouseY);
+  
+  // Draw a mirrored line across the vertical center
+  let mirrorX = width - mouseX;
+  let prevMirrorX = width - pmouseX;
+  line(mirrorX, mouseY, prevMirrorX, pmouseY);
+
+  // White ball cursor at mouse
+  noStroke();
+  fill(255);
+  ellipse(mouseX, mouseY, 10, 10);
+
+  // Optional: also show a white ball on the mirrored cursor
+  ellipse(mirrorX, mouseY, 10, 10);
+}
+
+function keyPressed() {
+  if (key === 's') {
+    saveCanvas('fileName', 'png');
+  }
+  if (key === ' ') {
     background(0);
-    text("drag ur mouse here", 150, 150);
-    }
-    function draw() {
-    circleSize = random(100, 800);
-    r = random(0);
-    g = random(50);
-    b = random(150);
-    
-    //r=map(mouseX, 0, width, 0, 255);
-    fill(r,g,b, 20)
-    textSize(45);
-    //circle(width/2, height/2, mouseX);
-    //circle(mouseX, mouseY, circleSize);
-    square(mouseX, mouseY, circleSize);
-    }
+  }
+}
