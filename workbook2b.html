@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neon Blink</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000000;
+      transition: background-color 0.1s ease;
+    }
+
+    .giant-button {
+      font-size: 10rem;
+      padding: 3rem 6rem;
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 0px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .giant-button:hover {
+      background-color: #000000;
+    }
+
+    .warning-text {
+  font-size: 12px; /* ⬅️ Try 10–14px for subtlety */
+  color: white;
+  font-style: italic;
+  letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <a href="workbook-2b/week.html" id="weekLink">
+    <button class="giant-button" onclick="startBlinking(event)">
+        <div class="main-text">PRESS ME</div>
+        <div class="warning-text">*flash warning*</div>
+    </div>
+    </button>
+  </a>
+
+  <script>
+    function startBlinking(e) {
+      e.preventDefault(); // prevent link jump until done
+      let count = 0;
+      const maxBlinks = 5;
+      const blinkInterval = 100; // ms
+      const originalColor = "#f0f0f0";
+      const black = "black"; // neon blue
+
+      const blink = setInterval(() => {
+        document.body.style.backgroundColor = count % 2 === 0 ? black : originalColor;
+        count++;
+        if (count >= maxBlinks * 2) {
+          clearInterval(blink);
+          document.getElementById("weekLink").click(); // go to link after blinking
+        }
+      }, blinkInterval);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RESEARCH</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 60px;
+      font-family: 'helvetica';
+      background-color: white;
+      color: #222;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .heading {
+      flex: 1;
+      font-size: 75px;
+      font-weight: 5px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      flex: 2;
+      font-size: 17px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .heading,
+      .description {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="heading">
+      week 6 research
+    </div>
+    <div class="description">
+        This week, we learned how to incorporate interactive audio feature into our p5 page through Visual Studio Code. We 
+        specifically learned how to make a shape react to any noise being made and using color to elevate the effect even 
+        more.   
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+        <div class="bottom">
+            <div id="sketch-holder"></div>
+          </div>
+        </div>
+    
+        <script src="week6research.js"></script>
+
+    </div>
+  </div>
+
+
+
+</body>
+</html>
+
