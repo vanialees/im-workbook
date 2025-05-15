@@ -1,0 +1,53 @@
+/* style.css */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #2e4a8c, #5c83b9);
+    color: white;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: white;
+    color: black;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 1.1rem;
+  }
+  
+  .content {
+    max-width: 800px;
+    padding: 3rem 2rem;
+  }
+  
+  .content h1 {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0.5rem;
+  }
+  
+  .content p {
+    line-height: 1.6;
+    margin-top: 1.5rem;
+  }
+  

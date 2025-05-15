@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week 9 Timer Style</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff; /* Changed to white */
+      font-family: 'Share Tech Mono', monospace;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .week-title {
+      font-size: 8rem;
+      display: flex;
+      gap: 0.5rem;
+      letter-spacing: 0.15em;
+      user-select: none;
+    }
+
+    .week-title span {
+      display: inline-block;
+      width: 1.2em;
+      text-align: center;
+      color: #fff; /* white text */
+    }
+
+    .button-container {
+      margin-top: 3rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-button {
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #fff; /* white background */
+      color: #000; /* black text */
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-transform: uppercase;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .nav-button:hover {
+      background-color: black;
+      color: #fff;
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      background: #fff; /* white background */
+      color: #000; /* black text */
+      padding: 0.6rem 1.2rem;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      z-index: 10;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .home-button:hover {
+      background: black;
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .week-title {
+        font-size: 4rem;
+      }
+
+      .nav-button {
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .button-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="mainpage2c.html" class="home-button" title="Go to Home">&#8962;</a>
+
+  <div class="week-title" id="weekTitle">
+    <span>W</span>
+    <span>E</span>
+    <span>E</span>
+    <span>K</span>
+    <span> </span>
+    <span>9</span>
+  </div>
+
+  <div class="button-container">
+    <button class="nav-button" onclick="location.href='week9research.html'">Research</button>
+    <button class="nav-button" onclick="location.href='week9workshop.html'">Workshop</button>
+  </div>
+
+<script>
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const finalText = ['W', 'E', 'E', 'K', ' ', '9'];
+  const spans = document.querySelectorAll('#weekTitle span');
+
+  let intervalIds = [];
+
+  function randomChar() {
+    return letters.charAt(Math.floor(Math.random() * letters.length));
+  }
+
+  // Start randomizing all letters except spaces
+  spans.forEach((span, i) => {
+    if (finalText[i] === ' ') {
+      span.textContent = ' ';
+      return; // skip space
+    }
+    intervalIds[i] = setInterval(() => {
+      span.textContent = randomChar();
+    }, 5 + i * 1); // faster, staggered speed for cool effect
+  });
+
+  // After 5 seconds, stop randomizing and show final text
+  setTimeout(() => {
+    spans.forEach((span, i) => {
+      clearInterval(intervalIds[i]);
+      span.textContent = finalText[i];
+    });
+  }, 1500);
+</script>
+</body>
+</html>

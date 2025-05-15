@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arduino</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: radial-gradient(circle at bottom center, black, white);
+      color: #fff;
+      padding: 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .heading {
+      font-size: 10rem;
+      font-weight: 100;
+      letter-spacing: 0.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      display: flex;
+      gap: 5rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .column {
+      flex: 0 0 400px;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+      text-align: justify;
+    }
+
+    .column:first-child {
+      color: white;
+    }
+
+    .column:last-child {
+      color: #f4d7d7;
+    }
+
+    /* Decorative ellipse/star */
+    .ellipse-star {
+      position: absolute;
+      left: -20px;
+      top: -40px;
+      width: 120px;
+      height: 60px;
+      border: 2px solid white;
+      border-radius: 50%;
+      transform: rotate(-20deg);
+    }
+
+    .star {
+      position: absolute;
+      left: 60px;
+      top: 35px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    .blue-block {
+  position: absolute;
+  right: 0;
+  bottom: -100px;
+  width: 20px;
+  height: 100px;
+  background-color: #2d56f3;
+  cursor: pointer;
+  animation: flicker 1s infinite;
+}
+
+.right-block {
+  left: auto;
+  right: 0;
+  background-color:  #2d56f3;/* optional: different color to distinguish */
+}
+
+.left-block {
+  left: 0;
+  right: auto;
+  background-color: #f83375;
+}
+
+
+
+
+/* Flicker animation keyframes */
+@keyframes flicker {
+  0%, 100% { opacity: 100; }
+  50% { opacity: 0.3; }
+}
+
+    @media (max-width: 768px) {
+      .heading {
+        font-size: 3.5rem;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heading">ARDUINO</div>
+  <div class="ellipse-star"></div>
+  <div class="star"></div>
+
+  <div class="content">
+    <div class="column">
+      Arduino is central to the Maker Movement which heavily emphasizes on hands-on creation and learning. “It is a culturally significant tool that bridges art, technology and education in the 21st century.” It became a symbol of accessible tech which allowed artists, students and hobbyists to build electronics without engineering degrees/experiences.
+    </div>
+
+    <div class="column">
+      In the creative world, Arduino can also be used to make interactive art exhibits, sound installations and kinetic sculptures. Famous examples such as Rafael Lozano-Hemmer’s work — also known as the Pulse Room uses Arduino for audience interaction. Another example is simple other works in museums that respond to touch, motion or voice inputs also rely on Arduino to make a successful interactive piece. This makes Arduino such a crucial electronic piece to make interactive robots and art pieces which is rapidly growing in this generation.
+    </div>
+
+    <a href="week7research2.html" class="blue-block" title="Go to next page"></a>
+    <a href="week7.html" class="blue-block left-block" title="Go back"></a>
+
+  </div>
+
+</body>
+</html>

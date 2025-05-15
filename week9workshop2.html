@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Week 9 Interaction</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 0.3s ease;
+    }
+
+    .pink-block {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 150px;
+      background-color: #f32d7c;
+      cursor: pointer;
+      z-index: 10;
+      animation: flicker 1s infinite;
+    }
+
+    .blue-block {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 150px;
+      background-color: #2d56f3;
+      cursor: pointer;
+      z-index: 10;
+      animation: flicker 1s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left pink edge: Go back -->
+  <div class="pink-block" onclick="history.back()" title="Go back"></div>
+
+  <script>
+    const gif1 = 'week9.gif'; // Replace with your first GIF path
+    const gif2 = 'week9-2.gif'; // Replace with your second GIF path
+
+    // Set initial background
+    document.body.style.backgroundImage = `url(${gif1})`;
+
+    // Switch background based on cursor X position
+    document.addEventListener('mousemove', (e) => {
+      const mid = window.innerWidth / 2;
+      if (e.clientX < mid) {
+        document.body.style.backgroundImage = `url(${gif1})`;
+      } else {
+        document.body.style.backgroundImage = `url(${gif2})`;
+      }
+    });
+  </script>
+
+</body>
+</html>

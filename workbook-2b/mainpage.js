@@ -1,3 +1,4 @@
+//I used chatGPT to help load this code in which I have changed according to my own preference.
 let fonts = [];
 let letters = [];
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weeks Navigation</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: 'Arial Black', Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main-weeks {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 2rem;
+    }
+
+    .week-link {
+      font-size: 8vw;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    .week-link:hover {
+      transform: scale(1.05);
+      color: #ccc;
+    }
+
+    .background-word {
+      position: absolute;
+      color: #888;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      pointer-events: none;
+      white-space: nowrap;
+      font-family: 'Courier New', monospace;
+    }
+
+    .back-arrow {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  z-index: 20;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-arrow:hover {
+  transform: translateY(-50%) scale(1.2);
+  color: #aaa;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="main-weeks">
+    <a href="week7.html" class="week-link">WEEK 7</a>
+    <a href="week8.html" class="week-link">WEEK 8</a>
+    <a href="week9.html" class="week-link">WEEK 9</a>
+  </div>
+
+  <a href="index.html" class="back-arrow">&lt;</a>
+
+  <script>
+    const words = [
+      "LOADING", "TIMER", "SYNTH", "ELECTRONIC", "WAVE", "PIXEL",
+      "GLITCH", "MODULE", "ARRAY", "LOOP", "BINARY", "SERIAL",
+      "INPUT", "OUTPUT", "BITMAP", "CIRCUIT", "JAVASCRIPT", "SENSOR",
+      "ARDUINO", "REACTIVE", "DATA", "SIGNAL", "DECODE", "MATRIX"
+    ];
+
+    const wordCount = 300;
+
+    function randomWord() {
+      return words[Math.floor(Math.random() * words.length)];
+    }
+
+    function createWord() {
+      const span = document.createElement('span');
+      span.classList.add('background-word');
+      span.style.top = `${Math.random() * 100}vh`;
+      span.style.left = `${Math.random() * 100}vw`;
+      span.textContent = randomWord();
+      document.body.appendChild(span);
+
+      setInterval(() => {
+        span.textContent = randomWord();
+      }, Math.random() * 1000 + 500); // every 0.5s to 1.5s
+    }
+
+    for (let i = 0; i < wordCount; i++) {
+      createWord();
+    }
+  </script>
+
+</body>
+</html>

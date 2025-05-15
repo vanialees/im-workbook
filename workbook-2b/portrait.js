@@ -1,3 +1,8 @@
+//I took inspiration from Lily Crandall's self portrait. I edited the code to make the portrait 
+// more like me. I have also added an interactive cursor to make it have relationship with the other 
+// activity - the Yayoi Kusama one. 
+//https://editor.p5js.org/lilycrandall/sketches/42bCYAAP-
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }

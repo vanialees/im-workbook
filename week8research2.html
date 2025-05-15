@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INSPIRATION</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background: radial-gradient(circle at bottom center, black, white);
+      color: #fff;
+      padding: 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .heading {
+      font-size: 10rem;
+      font-weight: 100;
+      letter-spacing: 0.1rem;
+      position: relative;
+      z-index: 0;
+    }
+
+    .content {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .column {
+      flex: 0 0 250px;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+      text-align: justify;
+    }
+
+    .column:first-child {
+      color: white;
+    }
+
+    .column:last-child {
+      color: white;
+    }
+
+    /* Decorative ellipse/star */
+    .ellipse-star {
+      position: absolute;
+      left: -20px;
+      top: -40px;
+      width: 120px;
+      height: 60px;
+      border: 2px solid white;
+      border-radius: 50%;
+      transform: rotate(-20deg);
+    }
+
+    .star {
+      position: absolute;
+      left: 60px;
+      top: 35px;
+      width: 10px;
+      height: 10px;
+      background: white;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    .blue-block {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  width: 30px;
+  height: 50px;
+  background-color: #f32d7c;;
+  cursor: pointer;
+  animation: flicker 1s infinite;
+}
+
+/* Flicker animation keyframes */
+@keyframes flicker {
+  0%, 100% { opacity: 100; }
+  50% { opacity: 0.3; }
+}
+
+    @media (max-width: 768px) {
+      .heading {
+        font-size: 3.5rem;
+      }
+
+      .content {
+        flex-direction: column;
+      }
+    }
+
+    .image-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-block {
+  left: auto;
+  right: 0;
+  background-color:  #2d56f3;/* optional: different color to distinguish */
+}
+
+.image-column img {
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; /* optional */
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="heading">EDUCATED GUESS</div>
+  <div class="ellipse-star"></div>
+  <div class="star"></div>
+
+    </a>
+  </div>
+  
+  <a href="week8research3.html" class="blue-block right-block" title="Go to next page"></a>
+
+  <div class="content">
+    <!-- Image Column -->
+    <div class="image-column">
+      <div style="text-align: center;">
+        <a href="https://www.educated--guess.com/" target="_blank">
+          <img src="educationguess.png" alt="Descriptive alt text" />
+        </a>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #ccc;">Click picture to open Education Guess</p>
+      </div>
+    </div>
+  
+    <!-- Text Column -->
+    <div class="column">
+        The Educated Guess website is my inspiration because of its unique, immersive design that feels more 
+        like an interactive experience than a traditional website. It seamlessly combines motion graphics, 
+        bold typography, and layered visuals to create a dynamic storytelling environment. I’m particularly 
+        drawn to how it breaks conventional layouts, using fluid transitions and unexpected interactions 
+        to keep the viewer engaged. The site feels modern and experimental, yet still intuitive to navigate. 
+        Its creative direction perfectly balances chaos and clarity, which inspires me to explore unconventional 
+        structures in my own work. It proves that design can be both functional and expressive. 
+  </div>
+  
+
+    <a href="week8research.html" class="blue-block" title="Go back"></a>
+    
+
+  </div>
+
+</body>
+</html>

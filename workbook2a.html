@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Animation</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: white;
+      font-family: 'Courier New', monospace;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #code {
+      white-space: pre-wrap;
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px white;
+      max-width: 600px;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+    #nextBtn {
+      display: none;
+      padding: 0.75rem 1.5rem;
+      background-color: white;
+      color: #0f0f0f;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #nextBtn:hover {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="code"></div>
+  <button id="nextBtn" onclick="location.href='2aworks.html'">Go to Next Page</button>
+
+  <script>
+    const text = `Welcome to my workbook 2A where you can find my experimentations, workshop works and other explorations.\nI hope you enjoy this website as much as I \nenjoyed making it :)`;
+
+    const codeEl = document.getElementById('code');
+    const nextBtn = document.getElementById('nextBtn');
+    let idx = 0;
+
+    function typeText() {
+      if (idx < text.length) {
+        codeEl.textContent += text[idx++];
+        setTimeout(typeText, 30); // speed of typing
+      } else {
+        nextBtn.style.display = 'inline-block';
+      }
+    }
+
+    typeText();
+  </script>
+</body>
+</html>
